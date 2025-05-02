@@ -4,6 +4,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-brown-1: #514030;
+  --color-brown-2: #908275;
+  --color-brown-3: #C1AC98;
+  --color-cream-1: #FAF1E8;
 }
 
 @theme inline {
@@ -44,7 +49,6 @@ body {
 @tailwind components;
 @tailwind utilities;
 
-/* Optionally add this to enforce the font family */
 .font-saint-pauline {
   font-family: 'Saint Pauline', sans-serif !important;
 }
