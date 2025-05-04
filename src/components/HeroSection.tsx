@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HeroSection() {
     return (
-        <section className="relative h-[114vh] w-full bg-gradient-to-b from-[var(--color-cream-1)] to-[var(--color-brown-3)]">
+        <section className="relative h-[110vh] md:h-[115vh] w-full bg-gradient-to-b from-[var(--color-cream-1)] to-[var(--color-brown-3)]">
             {/* Background Stars */}
             <div className="absolute inset-0 z-0 bg-stars-pattern bg-repeat opacity-50"></div>
 
@@ -16,13 +16,19 @@ export default function HeroSection() {
                 </p>
             </div>
 
-            {/* Cloud Bottom Separator */}
+            {/* Mobile version */}
             <img
-                src="/image/vision_mission_cloud_web.svg"
-                alt="Combined Clouds"
-                className="w-full h-full absolute top-[114vh] translate-y-[-50%] left-0 w-full h-[40vh] z-20"
+                src="/image/vision_mission_cloud_phone.svg"
+                alt="Combined Clouds Mobile"
+                className="w-w-full h-full absolute top-[110vh] translate-y-[-50%] z-20 md:hidden"
             />
 
+            {/* Desktop version */}
+            <img
+                src="/image/vision_mission_cloud_web.svg"
+                alt="Combined Clouds Desktop"
+                className="w-full h-full absolute top-[115vh] translate-y-[-50%] z-20 hidden md:block"
+            />
         </section>
     );
 }
