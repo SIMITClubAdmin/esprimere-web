@@ -1,9 +1,11 @@
+import PastActivities from '@/components/PastActivities';
 import HeroSection from '../components/HeroSection';
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
+      <PastActivities />
       {/* Next section here, will appear below the cloud */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
