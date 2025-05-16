@@ -30,7 +30,7 @@ export default function PastActivities() {
         <div className="w-full h-64 md:h-[65vh] rounded-lg overflow-hidden mb-16">
           <img
             src="/image/chasing_moments.png"
-            alt="Chasing Moments Showcase"
+            alt="Chasing Moments Showcase 2025"
             className="w-full h-full object-cover"
           />
         </div>
@@ -41,10 +41,38 @@ export default function PastActivities() {
         </p>
 
         {/* Media */}
+        <div className="w-full h-64 md:h-[65vh] rounded-lg overflow-hidden mb-16" >
+          <img
+            src="/image/land_of_zo.png"
+            alt="Into the Land of Zo Showcase 2024"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Third Event */}
+        <p className="font-dream-avenue text-xl md:text-4xl text-[var(--color-brown-1)] mb-12">
+          Esprimere Songwriting Workshop 2024
+        </p>
+
+        {/* Media */}
+        <div className="w-full h-64 md:h-[65vh] rounded-lg overflow-hidden mb-16">
+          <img
+            src="/image/songwriting_workshop.png"
+            alt="Songwriting Workshop 2024"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Fourth Event (right-aligned) */}
+        <p className="font-dream-avenue text-xl md:text-4xl text-[var(--color-brown-1)] text-right mb-12">
+          Original Song: How Far We've Come
+        </p>
+
+        {/* Media */}
         <div className="w-full h-64 md:h-[65vh] rounded-lg overflow-hidden">
           <img
-            src="/image/chasing_moments.png" // Change later
-            alt="Into the Land of Zo Showcase 2024"
+            src="/image/songs_and_covers.png" 
+            alt="Songs and Covers"
             className="w-full h-full object-cover"
           />
         </div>
