@@ -1,5 +1,6 @@
 import PastActivities from '@/components/PastActivities';
 import HeroSection from '../components/HeroSection';
+import Footer from '@/components/FooterSection';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           {/* Your content */}
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
