@@ -40,14 +40,14 @@ export default function Footer() {
 
                     {/* Right Section - Social Media */}
                     <div className="flex-shrink-0">
-                        <h3 className="font-saint-pauline text-2xl md:text-3xl font-light mb-4 text-[#D4C4A8] md:text-right">
+                        <h3 className="font-saint-pauline text-4xl md:text-5xl font-light mb-4 text-[#D4C4A8] md:text-right">
                             Follow Us
                         </h3>
 
                         <div className="flex gap-4 md:justify-end">
                             {/* Instagram */}
                             <a
-                                href="#"
+                                href="https://www.instagram.com/esprimeresings/"
                                 className="w-10 h-10 bg-[#5A4A3C] hover:bg-[#6B5B4D] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                                 aria-label="Instagram"
                             >
@@ -58,7 +58,7 @@ export default function Footer() {
 
                             {/* YouTube */}
                             <a
-                                href="#"
+                                href="https://www.youtube.com/@esprimeresings"
                                 className="w-10 h-10 bg-[#5A4A3C] hover:bg-[#6B5B4D] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                                 aria-label="YouTube"
                             >
@@ -69,7 +69,7 @@ export default function Footer() {
 
                             {/* TikTok */}
                             <a
-                                href="#"
+                                href="https://www.tiktok.com/@esprimeresings"
                                 className="w-10 h-10 bg-[#5A4A3C] hover:bg-[#6B5B4D] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                                 aria-label="TikTok"
                             >
