@@ -7,13 +7,6 @@ export default function Home() {
     <main>
       <HeroSection />
       <PastActivities />
-      {/* Next section here, will appear below the cloud */}
-      <section className="bg-white py-40">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold">Next Section Here</h2>
-          {/* Your content */}
-        </div>
-      </section>
       <Footer />
     </main>
   );
