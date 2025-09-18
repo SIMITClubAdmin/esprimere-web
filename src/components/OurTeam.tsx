@@ -55,7 +55,7 @@ export default function OurTeam() {
     return (
       <section className="py-20 bg-[#A9B6B2]">
         <div className="container mx-auto px-4 text-center">
-          <div className="font-saint-pauline text-4xl md:text-6xl text-[var(--color-brown-1)]">
+          <div className="font-saint-pauline text-5xl md:text-7xl text-[var(--color-brown-1)]">
             Loading...
           </div>
         </div>
@@ -67,8 +67,8 @@ export default function OurTeam() {
     <section className="py-20 bg-[#A9B6B2] relative">
       {/* Main Title */}
       <div className="text-center mb-16">
-        <h2 className="font-saint-pauline font-extralight text-5xl md:text-7xl text-[var(--color-brown-1)] tracking-wide">
-          Meet the Team
+        <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] tracking-wide">
+          Meet Our Team
         </h2>
       </div>
 
@@ -78,7 +78,7 @@ export default function OurTeam() {
           {teamMembers.map((member) => (
             <div key={member._id} className="flex flex-col items-center">
               {/* Frame + Photo */}
-              <div className="relative w-72 h-96">
+              <div className="relative w-80 h-104">
                 {/* PNG Frame */}
                 <img
                   src="/frames/vintage-frame.svg" // Your decorative PNG
@@ -90,7 +90,7 @@ export default function OurTeam() {
                 <div className="absolute inset-8 rounded overflow-hidden">
                   {member.img ? (
                     <img
-                      src={urlFor(member.img).width(300).height(400).url()}
+                      src={urlFor(member.img).width(400).height(500).url()}
                       alt={member.name}
                       className="w-full h-full object-cover"
                     />
@@ -103,18 +103,18 @@ export default function OurTeam() {
 
                 {/* Nameplate */}
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#40250d] px-4 py-1 rounded-lg shadow-md">
-                    <div className="font-dream-avenue text-base md:text-lg text-amber-50 font-semibold tracking-wide">
-                        {member.name}
+                    <div className="font-dream-avenue text-lg md:text-xl text-amber-50 font-semibold tracking-wide">
+                        {member.role}
                     </div>
                 </div>
               </div>
 
               {/* Member Info */}
               <div className="mt-8 text-center">
-                <h3 className="font-dream-avenue text-2xl md:text-3xl text-[var(--color-brown-1)] font-semibold mb-3">
-                  {member.role}
+                <h3 className="font-dream-avenue text-3xl md:text-4xl text-[var(--color-brown-1)] font-semibold mb-3">
+                  {member.name}
                 </h3>
-                <p className="font-dream-avenue text-base md:text-lg text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
+                <p className="font-dream-avenue text-lg md:text-xl text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
                   {member.description}
                 </p>
               </div>
