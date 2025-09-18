@@ -121,7 +121,7 @@ export default function OurTeam() {
                   
                   {/* Vintage Nameplate */}
                   <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-amber-800 px-4 py-1 rounded-full shadow-md">
-                    <div className="font-dream-avenue text-sm text-amber-50 font-semibold tracking-wide">
+                    <div className="font-dream-avenue text-base md:text-lg text-amber-50 font-semibold tracking-wide">
                       {member.name}
                     </div>
                   </div>
@@ -131,12 +131,12 @@ export default function OurTeam() {
               {/* Member Info */}
               <div className="mt-8 text-center">
                 {/* Role */}
-                <h3 className="font-dream-avenue text-xl md:text-2xl text-[var(--color-brown-1)] font-semibold mb-3">
+                <h3 className="font-dream-avenue text-2xl md:text-3xl text-[var(--color-brown-1)] font-semibold mb-3">
                   {member.role}
                 </h3>
                 
                 {/* Description */}
-                <p className="font-dream-avenue text-sm md:text-base text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
+                <p className="font-dream-avenue text-base md:text-lg text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
                   {member.description}
                 </p>
               </div>
