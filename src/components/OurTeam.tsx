@@ -79,15 +79,8 @@ export default function OurTeam() {
             <div key={member._id} className="flex flex-col items-center">
               {/* Frame + Photo */}
               <div className="relative w-80 h-104">
-                {/* PNG Frame */}
-                <img
-                  src="/frames/vintage-frame.svg" // Your decorative PNG
-                  alt="Frame"
-                  className="w-full h-full"
-                />
-
-                {/* Photo inside the frame */}
-                <div className="absolute inset-8 rounded overflow-hidden">
+                {/* Photo under the frame */}
+                <div className="absolute inset-8 rounded overflow-hidden z-0">
                   {member.img ? (
                     <img
                       src={urlFor(member.img).width(400).height(500).url()}
@@ -101,8 +94,15 @@ export default function OurTeam() {
                   )}
                 </div>
 
+                {/* PNG Frame on top */}
+                <img
+                  src="/frames/vintage-frame.svg" // Your decorative PNG
+                  alt="Frame"
+                  className="w-full h-full absolute top-0 left-0 z-10"
+                />
+
                 {/* Nameplate */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#40250d] px-4 py-1 rounded-lg shadow-md">
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#40250d] px-6 py-2 rounded-lg shadow-md z-20">
                     <div className="font-dream-avenue text-lg md:text-xl text-amber-50 font-semibold tracking-wide">
                         {member.role}
                     </div>
