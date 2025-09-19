@@ -5,7 +5,7 @@ import React from 'react';
 export default function CurrentActivities() {
   return (
     <section className="pt-20 relative bg-cover bg-center bg-no-repeat" 
-             style={{ backgroundImage: 'url("/backgrounds/current_activities_bg.svg")' }}>
+             style={{ backgroundImage: 'url("/backgrounds/current-activities-bg-fade.svg")' }}>
       {/* Optional overlay for better text readability */}
       <div className="absolute inset-0"></div>
       
