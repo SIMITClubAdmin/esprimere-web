@@ -8,26 +8,23 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <CurrentActivities />
+      <div className="relative">
+        <CurrentActivities />
 
-      <div className="w-full overflow-hidden leading-none">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="w-full h-20"
-        >
-          {/* Top color (CurrentActivities bg) */}
-          <rect width="1200" height="120" className="fill-[#524030]" /> 
-          {/* Torn edge filled with bottom color */}
-          <path
-            d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z"
-            className="fill-[#D5CEB8]"
+        {/* Torn Separator */}
+        <div className="absolute -bottom-30 left-0 w-full h-[200px] overflow-hidden z-20">
+          <img
+            src="/separator/long-torn-paper-brown.svg"
+            alt="Section Separator"
+            className="w-full h-full object-cover"
           />
-        </svg>
+        </div>
       </div>
 
-      <PastActivities />
+      <div className="relative -mt-1"> {/* pull PastActivities up under torn edge */}
+        <PastActivities />
+      </div>
+
       <OurTeam />
       <Footer />
     </main>

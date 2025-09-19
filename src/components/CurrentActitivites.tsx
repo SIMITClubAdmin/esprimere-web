@@ -95,7 +95,7 @@ export default function CurrentActivities() {
           <div className="flex items-start gap-8">
             {/* Microphone SVG */}
             <div className="flex-shrink-0">
-                <img src="/mic-shadow.svg" alt="Microphone" className="w-64" />
+                <img src="/mics/mic-shadow-bottom.svg" alt="Microphone" className="w-70 mb-40" />
             </div>
 
             <div className="flex-grow text-white">
