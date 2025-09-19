@@ -73,7 +73,7 @@ export default function PastActivities() {
           data-index="title"
         >
           <div className="relative">
-            <h2 className="font-saint-pauline font-extralight text-5xl md:text-[4.5rem] text-[var(--color-brown-1)] relative z-10">
+            <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] relative z-10">
               Past Activities
               <span className="absolute -top-4 -right-8 text-lg opacity-60 rotate-12">✨</span>
             </h2>
