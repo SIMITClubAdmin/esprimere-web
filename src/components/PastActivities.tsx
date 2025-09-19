@@ -1,9 +1,18 @@
-"use client"
+'use client';
 
 import React, { useState, useEffect } from 'react';
+import { client } from '@/sanity/lib/client';
+import imageUrlBuilder from '@sanity/image-url';
+
+// Image URL builder
+const builder = imageUrlBuilder(client);
+function urlFor(source: any) {
+  return builder.image(source).url();
+}
 
 export default function PastActivities() {
   const [visibleItems, setVisibleItems] = useState(new Set());
+  const [activities, setActivities] = useState<any[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,34 +30,33 @@ export default function PastActivities() {
     items.forEach(item => observer.observe(item));
 
     return () => observer.disconnect();
-  }, []);
+  }, [activities]);
 
-  const activities = [
-    {
-      title: "Chasing Moments: The Stories We Keep Musical Showcase 2025",
-      image: "/image/chasing_moments.png",
-      align: "left",
-      year: "2025"
-    },
-    {
-      title: "Into the Land of Zo Musical Showcase 2024",
-      image: "/image/land_of_zo.png",
-      align: "right",
-      year: "2024"
-    },
-    {
-      title: "Esprimere Songwriting Workshop 2024",
-      image: "/image/songwriting_workshop.png",
-      align: "left",
-      year: "2024"
-    },
-    {
-      title: "Original Song: How Far We've Come",
-      image: "/image/songs_and_covers.png",
-      align: "right",
-      year: "2024"
-    }
-  ];
+  // Fetch past activities from Sanity
+  useEffect(() => {
+    const fetchActivities = async () => {
+      try {
+        const query = `*[_type == "pastActivity"] | order(sequence asc) {
+          _id,
+          name,
+          image,
+          year
+        }`;
+        const result = await client.fetch(query);
+        const mapped = result.map((item: any, index: number) => ({
+          title: item.name,
+          image: item.image ? urlFor(item.image) : '/image/placeholder.png',
+          align: index % 2 === 0 ? 'left' : 'right', // auto-alternate left/right
+          year: item.year || '2025',
+        }));
+        setActivities(mapped);
+      } catch (error) {
+        console.error('Error fetching past activities:', error);
+      }
+    };
+
+    fetchActivities();
+  }, []);
 
   return (
     <section
@@ -86,7 +94,7 @@ export default function PastActivities() {
         <div className="space-y-24">
           {activities.map((activity, index) => (
             <div
-              key={index}
+              key={activity.title + index}
               data-index={index}
               className={`
                 transform transition-all duration-1000 ease-out
@@ -107,7 +115,7 @@ export default function PastActivities() {
                     <div className="w-12 h-12 rounded-full bg-[var(--color-brown-1)] bg-opacity-20 flex items-center justify-center">
                       <span className="text-[var(--color-brown-1)] font-bold text-lg">{activity.year}</span>
                     </div>
-                    <div className="flex-1 h-px bg-[var(--color-brown-1)] opacity-30"></div>
+                    <div className="flex-1 h-0.5 bg-[var(--color-brown-1)] opacity-50"></div>
                   </div>
                   
                   <h3 className={`
