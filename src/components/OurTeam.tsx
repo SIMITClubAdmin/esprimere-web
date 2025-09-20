@@ -74,7 +74,7 @@ export default function OurTeam() {
 
       {/* Team Members Grid */}
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+        <div className="flex flex-wrap justify-center gap-12 md:gap-16 lg:gap-12">
           {teamMembers.map((member) => (
             <div key={member._id} className="flex flex-col items-center">
               {/* Frame + Photo */}
@@ -103,9 +103,9 @@ export default function OurTeam() {
 
                 {/* Nameplate */}
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#40250d] px-6 py-2 rounded-lg shadow-md z-20">
-                    <div className="font-dream-avenue text-lg md:text-xl text-amber-50 font-semibold tracking-wide">
-                        {member.role}
-                    </div>
+                  <div className="font-dream-avenue text-lg md:text-xl text-amber-50 font-semibold tracking-wide text-center whitespace-nowrap">
+                    {member.role}
+                  </div>
                 </div>
               </div>
 
