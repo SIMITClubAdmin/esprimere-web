@@ -64,13 +64,13 @@ export default function OurTeam() {
   }
 
   return (
-    <section className="py-20 bg-[#A9B6B2] relative">
+    <section className="py-20 bg-[#A9B6B2] relative overflow-hidden">
       {/* Main Title */}
-      <div className="text-center mb-16">
-        <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] tracking-wide">
-          Meet Our Team
-        </h2>
-      </div>
+        <div className="text-center mb-16 mt-30 lg:mt-60">
+          <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] tracking-wide">
+            Meet Our Team
+          </h2>
+        </div>
 
       {/* Team Members Grid */}
       <div className="max-w-6xl mx-auto px-6">

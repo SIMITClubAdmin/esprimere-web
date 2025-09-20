@@ -25,7 +25,16 @@ export default function Home() {
         <PastActivities />
       </div>
 
-      <OurTeam />
+      {/* Our Team with curtain overlap */}
+      <div className="relative">
+        <OurTeam />
+        <img
+          src="/separator/curtain.png"
+          alt="Curtain"
+          className="absolute -top-12 left-0 w-full h-auto z-30"
+        />
+      </div>
+      
       <Footer />
     </main>
   );
