@@ -114,7 +114,7 @@ export default function OurTeam() {
                 <h3 className="font-dream-avenue text-3xl md:text-4xl text-[var(--color-brown-1)] font-semibold mb-3">
                   {member.name}
                 </h3>
-                <p className="font-dream-avenue text-lg md:text-xl text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
+                <p className="font-crimson text-lg md:text-xl text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
                   {member.description}
                 </p>
               </div>
