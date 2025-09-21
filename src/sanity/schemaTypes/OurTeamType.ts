@@ -16,11 +16,6 @@ export const ourTeam = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    }),
-    defineField({
       name: 'img',
       title: 'Image',
       type: 'image',

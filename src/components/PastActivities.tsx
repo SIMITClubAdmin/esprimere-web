@@ -64,7 +64,7 @@ export default function PastActivities() {
         relative
         w-full
         bg-[#D5CEB8]
-        bg-[url('/image/past_activites_bg.png')]
+        bg-[url('/backgrounds/past-activities-bg.png')]
         bg-repeat
         bg-center
         overflow-hidden
@@ -110,26 +110,30 @@ export default function PastActivities() {
               }`}>
                 
                 {/* Content Side */}
-                <div className={`space-y-6 ${activity.align === 'right' ? 'lg:col-start-2' : ''}`}>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-[var(--color-brown-1)] bg-opacity-20 flex items-center justify-center">
-                      <span className="text-[var(--color-brown-1)] font-bold text-lg">{activity.year}</span>
-                    </div>
-                    <div className="flex-1 h-0.5 bg-[var(--color-brown-1)] opacity-50"></div>
-                  </div>
-                  
-                  <h3 className={`
-                    font-dream-avenue text-xl md:text-3xl lg:text-4xl 
-                    text-[var(--color-brown-1)] leading-tight
-                    ${activity.align === 'right' ? 'text-right' : 'text-left'}
-                  `}>
-                    {activity.title}
-                  </h3>
+                <div className={`${activity.align === 'right' ? 'lg:col-start-2' : ''}`}>
+                  <div className="bg-white/50 rounded-xl px-6 py-6">
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-[var(--color-brown-1)] bg-opacity-20 flex items-center justify-center">
+                          <span className="text-[var(--color-brown-1)] font-bold text-lg">{activity.year}</span>
+                        </div>
+                        <div className="flex-1 h-0.5 bg-[var(--color-brown-1)] opacity-50"></div>
+                      </div>
+                      
+                      <h3 className={`
+                        font-dream-avenue text-xl md:text-3xl lg:text-4xl 
+                        text-[var(--color-brown-1)] leading-tight
+                        ${activity.align === 'right' ? 'text-right' : 'text-left'}
+                      `}>
+                        {activity.title}
+                      </h3>
 
-                  <div className={`flex gap-2 ${activity.align === 'right' ? 'justify-end' : 'justify-start'}`}>
-                    <div className="w-2 h-2 bg-[var(--color-brown-1)] rounded-full opacity-60"></div>
-                    <div className="w-6 h-2 bg-[var(--color-brown-1)] rounded-full opacity-40"></div>
-                    <div className="w-2 h-2 bg-[var(--color-brown-1)] rounded-full opacity-60"></div>
+                      <div className={`flex gap-2 ${activity.align === 'right' ? 'justify-end' : 'justify-start'}`}>
+                        <div className="w-2 h-2 bg-[var(--color-brown-1)] rounded-full opacity-60"></div>
+                        <div className="w-6 h-2 bg-[var(--color-brown-1)] rounded-full opacity-40"></div>
+                        <div className="w-2 h-2 bg-[var(--color-brown-1)] rounded-full opacity-60"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

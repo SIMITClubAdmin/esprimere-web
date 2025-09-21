@@ -29,7 +29,7 @@ export default function Home() {
       <div className="relative">
         <OurTeam />
         <img
-          src="/separator/curtain-2.png"
+          src="/separator/curtain-1-shadow.png"
           alt="Curtain"
           className="absolute -top-3 left-0 w-full h-auto z-30"
         />

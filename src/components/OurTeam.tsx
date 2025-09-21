@@ -16,7 +16,6 @@ interface TeamMember {
   _id: string;
   name: string;
   role: string;
-  description: string;
   img?: {
     asset: {
       _ref: string;
@@ -36,7 +35,6 @@ export default function OurTeam() {
           _id,
           name,
           role,
-          description,
           img
         }`;
         const members = await client.fetch(query);
@@ -53,7 +51,10 @@ export default function OurTeam() {
 
   if (loading) {
     return (
-      <section className="py-20 bg-[#A9B6B2]">
+      <section
+        className="py-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/backgrounds/our-team-bg.png")' }}
+      >
         <div className="container mx-auto px-4 text-center">
           <div className="font-saint-pauline text-5xl md:text-7xl text-[var(--color-brown-1)]">
             Loading...
@@ -64,13 +65,18 @@ export default function OurTeam() {
   }
 
   return (
-    <section className="py-20 bg-[#A9B6B2] relative overflow-hidden">
+    <section
+      className="py-30 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: 'url("/backgrounds/our-team-bg.png")' }}
+    >
       {/* Main Title */}
-        <div className="text-center mb-16 mt-30 lg:mt-60">
-          <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] tracking-wide">
-            Meet Our Team
-          </h2>
-        </div>
+      <div className="text-center mb-16 mt-30 lg:mt-60">
+        <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[#FFF7CC] tracking-wide mb-4">
+          Meet Our Team
+        </h2>
+        {/* Decorative line */}
+        <div className="w-32 h-1 bg-[#FFF7CC] mx-auto"></div>
+      </div>
 
       {/* Team Members Grid */}
       <div className="max-w-6xl mx-auto px-6">
@@ -96,7 +102,7 @@ export default function OurTeam() {
 
                 {/* PNG Frame on top */}
                 <img
-                  src="/frames/vintage-frame.svg" // Your decorative PNG
+                  src="/frames/vintage-frame.png"
                   alt="Frame"
                   className="w-full h-full absolute top-0 left-0 z-10"
                 />
@@ -111,12 +117,9 @@ export default function OurTeam() {
 
               {/* Member Info */}
               <div className="mt-8 text-center">
-                <h3 className="font-dream-avenue text-3xl md:text-4xl text-[var(--color-brown-1)] font-semibold mb-3">
+                <h3 className="font-dream-avenue text-3xl md:text-4xl text-[var(--color-brown-1)] font-semibold">
                   {member.name}
                 </h3>
-                <p className="font-crimson text-lg md:text-xl text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
-                  {member.description}
-                </p>
               </div>
             </div>
           ))}
