@@ -11,7 +11,7 @@ function urlFor(source: any) {
 }
 
 export default function PastActivities() {
-  const [visibleItems, setVisibleItems] = useState(new Set());
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const [activities, setActivities] = useState<any[]>([]);
 
   useEffect(() => {
@@ -19,7 +19,12 @@ export default function PastActivities() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleItems(prev => new Set([...prev, entry.target.dataset.index]));
+            const target = entry.target as HTMLElement;
+            const indexAttr = target.dataset.index;
+            if (indexAttr !== undefined) {
+              const index = Number(indexAttr);
+              setVisibleItems((prev) => new Set([...prev, index]));
+            }
           }
         });
       },
@@ -27,7 +32,7 @@ export default function PastActivities() {
     );
 
     const items = document.querySelectorAll('[data-index]');
-    items.forEach(item => observer.observe(item));
+    items.forEach((item) => observer.observe(item));
 
     return () => observer.disconnect();
   }, [activities]);
@@ -78,7 +83,7 @@ export default function PastActivities() {
         {/* Enhanced Main Title */}
         <div 
           className="-ml-6 transform transition-all duration-1000 ease-out"
-          data-index="title"
+          data-index="-1"
         >
           <div className="relative">
             <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] relative z-10">
@@ -95,10 +100,10 @@ export default function PastActivities() {
           {activities.map((activity, index) => (
             <div
               key={activity.title + index}
-              data-index={index}
+              data-index={index.toString()}
               className={`
                 transform transition-all duration-1000 ease-out
-                ${visibleItems.has(index.toString()) 
+                ${visibleItems.has(index) 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-20 opacity-0'
                 }
