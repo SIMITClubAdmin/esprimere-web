@@ -16,7 +16,6 @@ interface TeamMember {
   _id: string;
   name: string;
   role: string;
-  description: string;
   img?: {
     asset: {
       _ref: string;
@@ -36,7 +35,6 @@ export default function OurTeam() {
           _id,
           name,
           role,
-          description,
           img
         }`;
         const members = await client.fetch(query);
@@ -53,7 +51,10 @@ export default function OurTeam() {
 
   if (loading) {
     return (
-      <section className="py-20 bg-[#A9B6B2]">
+      <section
+        className="py-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/backgrounds/our-team-bg.png")' }}
+      >
         <div className="container mx-auto px-4 text-center">
           <div className="font-saint-pauline text-5xl md:text-7xl text-[var(--color-brown-1)]">
             Loading...
@@ -64,30 +65,28 @@ export default function OurTeam() {
   }
 
   return (
-    <section className="py-20 bg-[#A9B6B2] relative">
+    <section
+      className="py-30 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: 'url("/backgrounds/our-team-bg.png")' }}
+    >
       {/* Main Title */}
-      <div className="text-center mb-16">
-        <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[var(--color-brown-1)] tracking-wide">
+      <div className="text-center mb-16 mt-30 lg:mt-60">
+        <h2 className="font-saint-pauline font-extralight text-6xl md:text-8xl text-[#FFF7CC] tracking-wide mb-4">
           Meet Our Team
         </h2>
+        {/* Decorative line */}
+        <div className="w-32 h-1 bg-[#FFF7CC] mx-auto"></div>
       </div>
 
       {/* Team Members Grid */}
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+        <div className="flex flex-wrap justify-center gap-12 md:gap-16 lg:gap-12">
           {teamMembers.map((member) => (
             <div key={member._id} className="flex flex-col items-center">
               {/* Frame + Photo */}
               <div className="relative w-80 h-104">
-                {/* PNG Frame */}
-                <img
-                  src="/frames/vintage-frame.svg" // Your decorative PNG
-                  alt="Frame"
-                  className="w-full h-full"
-                />
-
-                {/* Photo inside the frame */}
-                <div className="absolute inset-8 rounded overflow-hidden">
+                {/* Photo under the frame */}
+                <div className="absolute inset-8 rounded overflow-hidden z-0">
                   {member.img ? (
                     <img
                       src={urlFor(member.img).width(400).height(500).url()}
@@ -101,22 +100,26 @@ export default function OurTeam() {
                   )}
                 </div>
 
+                {/* PNG Frame on top */}
+                <img
+                  src="/frames/vintage-frame.png"
+                  alt="Frame"
+                  className="w-full h-full absolute top-0 left-0 z-10"
+                />
+
                 {/* Nameplate */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#40250d] px-4 py-1 rounded-lg shadow-md">
-                    <div className="font-dream-avenue text-lg md:text-xl text-amber-50 font-semibold tracking-wide">
-                        {member.role}
-                    </div>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#40250d] px-6 py-2 rounded-lg shadow-md z-20">
+                  <div className="font-dream-avenue text-lg md:text-xl text-amber-50 font-semibold tracking-wide text-center whitespace-nowrap">
+                    {member.role}
+                  </div>
                 </div>
               </div>
 
               {/* Member Info */}
               <div className="mt-8 text-center">
-                <h3 className="font-dream-avenue text-3xl md:text-4xl text-[var(--color-brown-1)] font-semibold mb-3">
+                <h3 className="font-dream-avenue text-3xl md:text-4xl text-[var(--color-brown-1)] font-semibold">
                   {member.name}
                 </h3>
-                <p className="font-dream-avenue text-lg md:text-xl text-[var(--color-brown-1)] leading-relaxed max-w-xs mx-auto">
-                  {member.description}
-                </p>
               </div>
             </div>
           ))}

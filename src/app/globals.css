@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -55,4 +56,8 @@ body {
 
 .font-dream-avenue {
   font-family: 'Dream Avenue', cursive !important;
+}
+
+.font-crimson {
+  font-family: 'Crimson Text', serif;
 }
