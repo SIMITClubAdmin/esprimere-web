@@ -99,13 +99,14 @@ export default function CurrentActivities() {
             <div className="w-32 h-1 bg-white mx-auto"></div>
           </div>
 
-          <div className="flex items-start gap-8">
-            {/* Microphone SVG */}
-            <div className="flex-shrink-0">
-              <img src="/mics/mic-shadow-bottom.svg" alt="Microphone" className="w-72 mb-40" />
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+            {/* Microphone SVG (hidden on small screens, margin bottom always applied) */}
+            <div className="hidden md:block flex-shrink-0 mb-40">
+              <img src="/mics/mic-shadow-bottom.svg" alt="Microphone" className="w-72" />
             </div>
 
-            <div className="flex-grow text-white">
+            {/* Text Section (also has mb-40 so spacing persists if mic hidden) */}
+            <div className="flex-grow text-white text-center md:text-left mb-40">
               <p className="font-crimson text-xl md:text-2xl leading-relaxed mb-8">
                 To join Esprimere, you'll need to Audition. Here's how it works
               </p>
@@ -119,7 +120,7 @@ export default function CurrentActivities() {
                   </h4>
                   <div className="font-crimson text-xl md:text-2xl leading-relaxed space-y-2">
                     <p>Prepare 2 songs:</p>
-                    <ul className="ml-6 space-y-1">
+                    <ul className="ml-0 md:ml-6 space-y-1">
                       <li>• 1 song from our provided list</li>
                       <li>• 1 song of your choice</li>
                     </ul>
