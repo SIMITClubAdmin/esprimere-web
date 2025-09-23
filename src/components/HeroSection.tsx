@@ -161,8 +161,8 @@ export default function HeroSection() {
 
             {/* Club Name & Tagline */}
             <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center px-4">
-                <h1 className="font-saint-pauline text-7xl sm:text-8xl md:text-[10rem] font-extralight text-[var(--color-brown-1)] tracking-wide leading-none">
-                    Sim <br className="block md:hidden" />
+                <h1 className="font-saint-pauline text-7xl sm:text-8xl md:text-[10rem] font-extralight text-[var(--color-brown-1)] tracking-wide leading-none md:whitespace-nowrap">
+                    Sim <br className="md:hidden" />
                     Esprimere
                 </h1>
                 <p className="whitespace-nowrap font-dream-avenue text-2xl sm:text-3xl md:text-5xl text-[var(--color-brown-1)] -mt-2 md:-mt-4">
