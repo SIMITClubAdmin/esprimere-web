@@ -82,7 +82,7 @@ export default function PastActivities() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 pt-[30vh] pb-32">
         {/* Enhanced Main Title */}
         <div 
-          className="-ml-6 transform transition-all duration-1000 ease-out"
+          className="transform transition-all duration-1000 ease-out"
           data-index="-1"
         >
           <div className="relative">
