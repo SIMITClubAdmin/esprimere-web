@@ -1,7 +1,7 @@
 # Esprimere Club Website
 
 This is the official website for **Esprimere Club**.  
-Built with **Next.js 15**, **Sanity CMS**, and **Tailwind CSS**.
+Built with **Next.js 15**, **Sanity CMS**, and **Tailwind CSS**.  
 Live at 👉 [esprimere.vercel.app](https://esprimere.vercel.app)
 
 ---
@@ -36,9 +36,9 @@ Live at 👉 [esprimere.vercel.app](https://esprimere.vercel.app)
 
 ## 📝 For Esprimere Club Members (How to Add Data)
 
-We use **Sanity Studio** to manage content.
+Our content is managed in **Sanity Studio**:  
+👉 [https://esprimere.vercel.app/studio](https://esprimere.vercel.app/studio)
 
-👉 Open [https://esprimere.vercel.app/studio](https://esprimere.vercel.app/studio)
 (Note: Only authorized club members with access can log in and edit data.)
 
 Inside, you will see two main collections:
@@ -60,5 +60,7 @@ Inside, you will see two main collections:
 - **Next.js 15**  
 - **Tailwind CSS**  
 - **Sanity CMS**
+
+---
 
 Made with ❤️ by SIM IT Club
