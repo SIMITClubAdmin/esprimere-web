@@ -28,6 +28,8 @@ Live at 👉 [esprimere.vercel.app](https://esprimere.vercel.app)
    NEXT_PUBLIC_SANITY_API_VERSION=2023-10-10
    ```
 
+   🔑 **Note:** These environment variables are already configured in the [Vercel dashboard](https://vercel.com) under the **esprimere-web** project. If you need to run locally, copy the values from there.
+
 4. **Run locally**
    ```bash
    npm run dev
