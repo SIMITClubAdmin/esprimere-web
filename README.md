@@ -1,4 +1,4 @@
-# Esprimere Website
+# Esprimere Club Website
 
 This is the official website for **Esprimere Club**.  
 Built with **Next.js 15**, **Sanity CMS**, and **Tailwind CSS**.
