@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Star component with blinking animation
 const AnimatedStar = ({
@@ -25,7 +25,6 @@ const AnimatedStar = ({
                 animation: `fadeInOut ${duration}s ease-in-out ${delay}s infinite`
             }}
         >
-            {/* Replace this SVG with your star SVG */}
             <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -37,7 +36,6 @@ const AnimatedStar = ({
     );
 };
 
-// Alternative star designs (you can replace these with your SVG)
 const FourPointStar = ({
     size = 'w-4 h-4',
     top,
@@ -106,8 +104,27 @@ const DiamondStar = ({
 };
 
 export default function HeroSection() {
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        const handleLoad = () => setLoaded(true);
+
+        if (document.readyState === 'complete') {
+            setLoaded(true);
+        } else {
+            window.addEventListener('load', handleLoad);
+        }
+
+        return () => {
+            window.removeEventListener('load', handleLoad);
+        };
+    }, []);
+
     return (
-        <section className="relative h-[110vh] md:h-[115vh] w-full bg-gradient-to-b from-[var(--color-cream-1)] to-[var(--color-brown-3)]">
+        <section
+            className={`relative h-[110vh] md:h-[115vh] w-full bg-gradient-to-b from-[var(--color-cream-1)] to-[var(--color-brown-3)]
+              transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        >
             <style jsx>{`
               @keyframes fadeInOut {
                 0%, 100% { opacity: 0.2; }
@@ -144,12 +161,12 @@ export default function HeroSection() {
                 <AnimatedStar size="w-2 h-2 md:w-3 md:h-3" top="72%" left="35%" delay={1.9} duration={2.1} />
                 <AnimatedStar size="w-4 h-4 md:w-5 md:h-5" top="75%" left="70%" delay={0.6} duration={2.7} />
 
-                {/* Additional scattered stars for mobile */}
+                {/* Extra scattered stars */}
                 <AnimatedStar size="w-2 h-2 md:w-3 md:h-3" top="30%" left="30%" delay={2.5} duration={3.5} />
                 <AnimatedStar size="w-2 h-2 md:w-3 md:h-3" top="42%" left="60%" delay={1.1} duration={2.4} />
                 <AnimatedStar size="w-3 h-3 md:w-4 md:h-4" top="62%" left="45%" delay={0.2} duration={3.1} />
 
-                {/* Four-point stars for variety */}
+                {/* Four-point stars */}
                 <FourPointStar size="w-3 h-3 md:w-4 md:h-4" top="20%" left="40%" delay={1.4} duration={2.6} />
                 <FourPointStar size="w-2 h-2 md:w-3 md:h-3" top="50%" left="25%" delay={0.8} duration={3.2} />
                 <FourPointStar size="w-4 h-4 md:w-5 md:h-5" top="65%" left="80%" delay={2.1} duration={2.3} />
@@ -170,14 +187,14 @@ export default function HeroSection() {
                 </p>
             </div>
 
-            {/* Mobile version */}
+            {/* Mobile Clouds */}
             <img
                 src="/image/vision_mission_cloud_phone.svg"
                 alt="Combined Clouds Mobile"
                 className="w-w-full h-full absolute top-[110vh] translate-y-[-50%] z-20 md:hidden"
             />
 
-            {/* Desktop version */}
+            {/* Desktop Clouds */}
             <img
                 src="/image/vision_mission_cloud_web.svg"
                 alt="Combined Clouds Desktop"
