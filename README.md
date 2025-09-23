@@ -1,38 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Esprimere Website
 
-## Getting Started
+This is the official website for **Esprimere Club**.  
+Built with **Next.js 15**, **Sanity CMS**, and **Tailwind CSS**.
+Live at 👉 [esprimere.vercel.app](https://esprimere.vercel.app)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 For Developers (How to Run)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/SIMITClubAdmin/esprimere-web.git
+   cd esprimere-web
+   ```
+   
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+   
+3. **Set up environment variables**
+   Create a .env.local file in the project root:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_SANITY_DATASET=production
+   NEXT_PUBLIC_SANITY_API_VERSION=2023-10-10
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Run locally**
+   ```bash
+   npm run dev
+   ```
+   Site will be available at http://localhost:3000.
 
-## Learn More
+## 📝 For Esprimere Club Members (How to Add Data)
 
-To learn more about Next.js, take a look at the following resources:
+We use **Sanity Studio** to manage content.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👉 Open [https://esprimere.vercel.app/studio](https://esprimere.vercel.app/studio)
+(Note: Only authorized club members with access can log in and edit data.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Inside, you will see two main collections:
 
-## Deploy on Vercel
+- **Our Team** 👥  
+  - **Name**: Full name of the member  
+  - **Role**: Position (e.g., President, Vice-President)  
+  - **Image**: Upload a profile photo  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Past Activity** 🎉  
+  - **Name**: Title of the activity  
+  - **Image**: Upload a photo of the activity  
+  - **Sequence**: Number to control order (lower numbers show first on the website)  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+➡️ After editing or adding content, press **Publish** ✅ to make it live.
 
-![Alt](https://repobeats.axiom.co/api/embed/ac372ec1b3e06244ae418816c85f5debb2f70da0.svg "Repobeats analytics image")
+## 🛠️ Tech Stack
+
+- **Next.js 15**  
+- **Tailwind CSS**  
+- **Sanity CMS**
+
+Made with ❤️ by SIM IT Club
