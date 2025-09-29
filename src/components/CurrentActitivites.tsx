@@ -151,7 +151,7 @@ export default function CurrentActivities() {
                   </h4>
                   <div className="font-crimson text-xl md:text-2xl leading-relaxed">
                     <ul className="space-y-1">
-                      <li>• Secure your preferred time slot via Beatix</li>
+                      <li>• Secure your preferred time slot via Peatix</li>
                     </ul>
                     <p className="mt-4 text-amber-200">
                       For further details, follow our Instagram{' '}
